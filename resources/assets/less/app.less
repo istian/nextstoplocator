@@ -1,8 +1,76 @@
 @import "bootstrap/bootstrap";
+@import "card";
 
 @btn-font-weight: 300;
 @font-family-sans-serif: "Roboto", Helvetica, Arial, sans-serif;
 
 body, label, .checkbox label {
-	font-weight: 300;
+  font-weight: 300;
+}
+
+.avatar {
+  img {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+  }
+}
+
+nav {
+  .avatar {
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.card {
+  &.hovercard {
+    border-bottom: 1px solid black;
+    text-align: left;
+    .cardheader {
+      height: 100px;
+    }
+
+    .station-name {
+      text-align: left;
+      padding: 5px;
+      h3 {
+        margin-bottom: 0;
+        margin-top: 0;
+        padding: 5px;
+      }
+    }
+
+    .bottom {
+      padding: 0;
+      padding-top: 10px;
+      margin-bottom: 0;
+      background-color: rgba(214, 224, 226, 0.7);
+      i {
+        margin-right: 4px;
+      }
+      .transpo-info {
+        margin: 0 8px 10px;
+      }
+
+      .transpo-info-panel {
+        ul {
+          margin: 0;
+          li {
+            background-color: rgba(214, 224, 226, 0.7);
+            border: 0;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+
+  }
 }
