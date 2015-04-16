@@ -3,7 +3,7 @@
 
 use Illuminate\Database\Seeder;
 use App\TransportStation\Models\Bus;
-use App\Station;
+use App\TransportStation\Models\Station;
 
 class BusTableSeeder extends Seeder
 {
@@ -18,11 +18,11 @@ class BusTableSeeder extends Seeder
 
         foreach ($stations as $key => $station)
         {
-            for ($i = 1; $i < rand(2, 5); $i++)
+            for ($i = 1; $i < rand(2, 9); $i++)
             {
                 try {
                     Bus::create([
-                        'name' => $faker->randomLetter,
+                        'name' => $faker->buildingNumber,
                         'station_id' => $station->id,
                         'arrival' => sprintf($arrivalFmt[array_rand($arrivalFmt)], $faker->randomDigit)
                     ]);
