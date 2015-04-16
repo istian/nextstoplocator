@@ -21,6 +21,7 @@ class CreateStationsTable extends Migration
             $table->string('type');
             $table->float('lat');
             $table->float('lon');
+            $table->string('image');
             $table->timestamps();
         });
     }
