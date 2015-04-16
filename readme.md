@@ -1,23 +1,46 @@
-## Laravel PHP Framework
+#Bus Station Locator
+This app is written in Laravel Framework. To let it work, you will have to do the following:
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+1. Create the MySQL database for this app:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+        mysqladmin create incube8ce -u<user> -p
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+2. From root directory, copy ".env.example" and create ".env". Modify necessary values including database name used on step 1.
 
-## Official Documentation
+3. Install composer package dependencies.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+        composer install
 
-## Contributing
+4. Run the migration scripts to create database table.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+        php artisan migrate
 
-### License
+5. Run database seeder to populate tables with test data. You may run composer dump-autoload to make sure autoloading class is updated.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+        composer dump-autoload
+
+        php artisan db:seed
+
+6. Run the application in your local machine. We can use PHP's built in web server to quickly run the application.
+
+        php artisan serve
+
+
+**Testing the application.**
+
+At this point, the database for this app should contain test data. Choose one user account in the database to logged in to the app. The password for all users is "1234".
+
+
+****Optional Steps****
+
+These steps are optinal but can also be run if assets aren't updated or issue on css/js files.
+
+Assuming that npm and gulp is already installed on the local machine, you can run the following to:
+
+1. inside the root directory of the app, update/install npm modules and node package dependencies.
+
+        npm install
+
+2. Run gulp to compile and update assets files
+
+        gulp
