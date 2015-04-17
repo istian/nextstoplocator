@@ -19,6 +19,10 @@ trait DiscoverableTrait
         $lat2 = \Auth::user()->lat ?: 0;
         $lon2 = \Auth::user()->lon ?: 0;
 
+        if ($lat1 === $lat2 && $lon1 == $lon2) {
+            return "0.0km";
+        }
+
         $degrees = rad2deg(acos((sin(deg2rad($lat1))*sin(deg2rad($lat2))) + (cos(deg2rad($lat1))*cos(deg2rad($lat2))*cos(deg2rad($lon1-$lon2)))));
 
         // Convert the distance in degrees to the chosen unit (kilometres, miles or nautical miles)
@@ -40,6 +44,7 @@ trait DiscoverableTrait
                 $unit = 'nm';
                 break;
         }
+
         return round($distance, 2) . $unit;
     }
 }

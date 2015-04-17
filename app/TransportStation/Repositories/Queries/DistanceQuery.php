@@ -46,11 +46,10 @@ class DistanceQuery extends AbstractQuery
         $minLat = number_format((float) ($lat - $degreesQueryRadius), 6, '.', '');
         $maxLon = number_format((float) ($lon + $degreesLongQueryRadius), 6, '.', '');
         $minLon = number_format((float) ($lon - $degreesLongQueryRadius), 6, '.', '');
-//        dd("$minLon|$maxLon\n$minLat|$maxLat");
 
         return $model->whereRaw(
             "lon BETWEEN $minLon AND $maxLon AND lat BETWEEN $minLat AND $maxLat"
-        )->orderBy(\DB::raw("(POW((lon-($lon)),2) + POW((lat-($lat)),2))"), "DESC");
+        )->orderBy(\DB::raw("(POW((lon-($lon)),2) + POW((lat-($lat)),2))"), "ASC");
 
     }
 }

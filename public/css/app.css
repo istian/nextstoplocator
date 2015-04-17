@@ -6440,18 +6440,23 @@ nav .avatar img {
 .card.hovercard {
   border-bottom: 1px solid black;
   text-align: left;
+  background-color: #f7e6c8;
 }
 .card.hovercard .cardheader {
-  height: 100px;
+  height: 180px;
 }
 .card.hovercard .station-name {
   text-align: left;
   padding: 5px;
+  border-top: 5px solid #ffa500;
 }
 .card.hovercard .station-name h3 {
   margin-bottom: 0;
   margin-top: 0;
   padding: 5px;
+}
+.card.hovercard .info {
+  padding: 4px 10px 0;
 }
 .card.hovercard .bottom {
   padding: 0;
@@ -6461,6 +6466,10 @@ nav .avatar img {
 }
 .card.hovercard .bottom i {
   margin-right: 4px;
+}
+.card.hovercard .bottom .distance {
+  margin-top: 7px;
+  margin-left: 5px;
 }
 .card.hovercard .bottom .transpo-info {
   margin: 0 8px 10px;

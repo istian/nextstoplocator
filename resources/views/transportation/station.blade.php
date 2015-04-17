@@ -14,19 +14,15 @@
                                 <div class="station-name">
                                     <h3>{{$station['name']}}</h3>
                                 </div>
-                                {{--<div class="avatar">
-                                    <img alt="" src="http://lorempixel.com/100/100/people/9/">
-                                </div>--}}
                                 <div class="info">
                                     <p><span class="label label-info"><i class="fa fa-map-marker"></i>
                                                                             Address:</span> <strong>{{$station['address']}}</strong></p>
 
-                                    <p><span class="label label-info"><i class="fa fa-compass"></i> Distance:</span>
-                                        <strong>{{$station['distance']}}</strong>
-                                    </p>
                                 </div>
                                 <div class="bottom clearfix">
                                     <div class="transpo-info clearfix">
+                                        <span class="pull-left distance"><i class="fa fa-compass"></i>
+                                        <strong>{{$station['distance']}}</strong></span>
                                         <a href="javascript://" data-info-url="/station/{{$station['id']}}"
                                            data-station-id="{{$station['id']}}"
                                            class="btn btn-primary get-trans-info pull-right"><i
