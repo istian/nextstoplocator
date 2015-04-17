@@ -10,7 +10,7 @@
 interface LocatorRepositoryInterface
 {
     /**
-     * Returns nearby terminal/transporation station nearby user location
+     * Returns nearby terminal/transporation station to user location
      * @return Collection
      */
     public function getNearbyStations($page, $perPage = 15);
